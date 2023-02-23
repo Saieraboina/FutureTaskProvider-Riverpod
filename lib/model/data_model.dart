@@ -1,13 +1,14 @@
 
 
 class DataModel {
-  String? title;
-  String? body;
+  String title;
+  String body;
 
-  DataModel({this.title, this.body});
+  DataModel({ required this.title, required this.body});
 
-  DataModel.fromJson(Map<String, dynamic> json) {
-    title = json['title'];
-    body = json['body'];
-  }
+ factory DataModel.fromJson(Map<String, dynamic> json)
+  => DataModel(  title : json['title'],
+      body : json['body']);
+
+
 }
